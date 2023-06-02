@@ -5,6 +5,9 @@ services:
     image: langgenius/dify-api:0.3.1
     restart: always
     environment:
+      EDITION: CLOUD
+      GITHUB_CLIENT_ID: b276f573a1b566cf9313
+      GITHUB_CLIENT_SECRET: 3843db3df7a3dd63323c1f5841f699f90cabdf40
       # Startup mode, 'api' starts the API server.
       MODE: api
       # The log level for the application. Supported values are `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
@@ -14,11 +17,11 @@ services:
       # The base URL of console application, refers to the Console base URL of WEB service if console domain is
       # different from api or web app domain.
       # example: http://cloud.dify.ai
-      CONSOLE_URL: ''
+      CONSOLE_URL: 'http://173.230.146.206'
       # The URL for Service API endpoints，refers to the base URL of the current API service if api domain is
       # different from console domain.
       # example: http://api.dify.ai
-      API_URL: ''
+      API_URL: 'http://173.230.146.206'
       # The URL for Web APP, refers to the Web App base URL of WEB service if web app domain is different from
       # console or api domain.
       # example: http://udify.app
@@ -159,11 +162,13 @@ services:
     image: langgenius/dify-web:0.3.1
     restart: always
     environment:
-      EDITION: SELF_HOSTED
+            #EDITION: SELF_HOSTED
+      EDITION: CLOUD
+      GITHUB_CLIENT_ID: b276f573a1b566cf9313
       # The base URL of console application, refers to the Console base URL of WEB service if console domain is
       # different from api or web app domain.
       # example: http://cloud.dify.ai
-      CONSOLE_URL: ''
+      CONSOLE_URL: 'http://173.230.146.206'
       # The URL for Web APP, refers to the Web App base URL of WEB service if web app domain is different from
       # console or api domain.
       # example: http://udify.app
@@ -189,6 +194,8 @@ services:
   redis:
     image: redis:6-alpine
     restart: always
+    ports:
+      - "6379:6379"
     volumes:
       # Mount the redis data directory to the container.
       - ./volumes/redis/data:/data
