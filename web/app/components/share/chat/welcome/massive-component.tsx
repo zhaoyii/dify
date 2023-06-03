@@ -1,14 +1,14 @@
 'use client'
-import React, { FC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 import cn from 'classnames'
 import { useTranslation } from 'react-i18next'
+import {
+  PencilIcon,
+} from '@heroicons/react/24/solid'
+import s from './style.module.css'
 import type { SiteInfo } from '@/models/share'
 import Button from '@/app/components/base/button'
-import {
-  PencilIcon
-} from '@heroicons/react/24/solid'
-
-import s from './style.module.css'
 
 export const AppInfo: FC<{ siteInfo: SiteInfo }> = ({ siteInfo }) => {
   const { t } = useTranslation()
@@ -37,9 +37,9 @@ export const StarIcon = () => (
   </svg>
 )
 
-export const ChatBtn: FC<{ onClick: () => void, className?: string }> = ({
+export const ChatBtn: FC<{ onClick: () => void; className?: string }> = ({
   className,
-  onClick
+  onClick,
 }) => {
   const { t } = useTranslation()
   return (
@@ -55,7 +55,7 @@ export const ChatBtn: FC<{ onClick: () => void, className?: string }> = ({
   )
 }
 
-export const EditBtn = ({ className, onClick }: { className?: string, onClick: () => void }) => {
+export const EditBtn = ({ className, onClick }: { className?: string; onClick: () => void }) => {
   const { t } = useTranslation()
 
   return (
@@ -70,6 +70,6 @@ export const EditBtn = ({ className, onClick }: { className?: string, onClick: (
 }
 
 export const FootLogo = () => (
-  <div className={s.logo} />
+  // <div className={s.logo} />
+  <div></div>
 )
-
