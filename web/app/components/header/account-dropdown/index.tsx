@@ -2,16 +2,13 @@
 import { useTranslation } from 'react-i18next'
 import { Fragment, useState } from 'react'
 import { useContext } from 'use-context-selector'
-import classNames from 'classnames'
-import Link from 'next/link'
-import { ArrowRightOnRectangleIcon, ArrowTopRightOnSquareIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
+import { ArrowRightOnRectangleIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import Indicator from '../indicator'
 import AccountSetting from '../account-setting'
 import AccountAbout from '../account-about'
+import WorkplaceSelector from './workplace-selector'
 import type { LangGeniusVersionResponse, UserProfileResponse } from '@/models/common'
 import I18n from '@/context/i18n'
-import WorkplaceSelector from './workplace-selector'
 import Avatar from '@/app/components/base/avatar'
 
 type IAppSelectorProps = {
@@ -85,7 +82,7 @@ export default function AppSelector({ userProfile, onLogout, langeniusVersionInf
                   <div>{t('common.userProfile.settings')}</div>
                 </div>
               </Menu.Item>
-              <Menu.Item>
+              {/* <Menu.Item>
                 <Link
                   className={classNames(itemClassName, 'group justify-between')}
                   href={
@@ -104,7 +101,7 @@ export default function AppSelector({ userProfile, onLogout, langeniusVersionInf
                     <Indicator color={langeniusVersionInfo.current_version === langeniusVersionInfo.latest_version ? 'green' : 'orange'} />
                   </div>
                 </div>
-              </Menu.Item>
+              </Menu.Item> */}
             </div>
             <Menu.Item>
               <div className='p-1' onClick={() => onLogout()}>
