@@ -1,6 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import cn from 'classnames'
-import s from './index.module.css'
 import type { ProviderHosted } from '@/models/common'
 
 type IOpenaiHostedProviderProps = {
@@ -33,7 +31,7 @@ const OpenaiHostedProvider = ({
         </div>
         <div className='text-[13px] text-gray-500'>{t('common.provider.openaiHosted.desc')}</div>
       </div> */}
-      <div className='flex items-center h-[42px] px-4 border-t-[0.5px] border-t-[rgba(0, 0, 0, 0.05)]'>
+      {/* <div className='flex items-center h-[42px] px-4 border-t-[0.5px] border-t-[rgba(0, 0, 0, 0.05)]'>
         <div className='text-[13px] text-gray-700'>{t('common.provider.openaiHosted.callTimes')}</div>
         <div className='relative grow h-2 flex bg-gray-200 rounded-md mx-2 overflow-hidden'>
           <div
@@ -47,7 +45,7 @@ const OpenaiHostedProvider = ({
         <div className={`
           text-[13px] font-medium ${exhausted ? 'text-[#D92D20]' : 'text-gray-700'}
         `}>{provider.quota_used}/{provider.quota_limit}</div>
-      </div>
+      </div> */}
       {
         exhausted && (
           <div className='
