@@ -75,8 +75,8 @@ const translation = {
     settings: '设置',
     workspace: '工作空间',
     createWorkspace: '创建工作空间',
-    helpCenter: '帮助文档',
-    about: '关于',
+    // helpCenter: '帮助文档',
+    // about: '关于',
     logout: '登出',
   },
   settings: {

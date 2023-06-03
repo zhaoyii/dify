@@ -5,7 +5,7 @@ import './styles/globals.css'
 import './styles/markdown.scss'
 
 export const metadata = {
-  title: 'Dify',
+  title: '42words.io',
 }
 
 const LocaleLayout = ({

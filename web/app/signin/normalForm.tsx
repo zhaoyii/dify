@@ -2,16 +2,14 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/navigation'
-import { IS_CE_EDITION } from '@/config'
 import classNames from 'classnames'
 import useSWR from 'swr'
-import Link from 'next/link'
+import Toast from '../components/base/toast'
 import style from './page.module.css'
 // import Tooltip from '@/app/components/base/tooltip/index'
-import Toast from '../components/base/toast'
+import { IS_CE_EDITION, apiPrefix } from '@/config'
 import Button from '@/app/components/base/button'
 import { login, oauth } from '@/service/common'
-import { apiPrefix } from '@/config'
 
 const validEmailReg = /^[\w\.-]+@([\w-]+\.)+[\w-]{2,}$/
 
@@ -92,7 +90,8 @@ const NormalForm = () => {
         },
       })
       router.push('/')
-    } finally {
+    }
+    finally {
       setIsLoading(false)
     }
   }
@@ -263,7 +262,7 @@ const NormalForm = () => {
             </>
           }
           {/*  agree to our Terms and Privacy Policy. */}
-          <div className="block mt-6 text-xs text-gray-600">
+          {/* <div className="block mt-6 text-xs text-gray-600">
             {t('login.tosDesc')}
             &nbsp;
             <Link
@@ -277,7 +276,7 @@ const NormalForm = () => {
               target={'_blank'}
               href='https://docs.dify.ai/user-agreement/privacy-policy'
             >{t('login.pp')}</Link>
-          </div>
+          </div> */}
 
         </div>
       </div>
