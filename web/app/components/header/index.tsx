@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useRouter, useSelectedLayoutSegment } from 'next/navigation'
 import classNames from 'classnames'
-import { CircleStackIcon, PuzzlePieceIcon } from '@heroicons/react/24/outline'
+import { CircleStackIcon } from '@heroicons/react/24/outline'
 import { CommandLineIcon, Squares2X2Icon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 import AccountDropdown from './account-dropdown'
@@ -95,14 +95,14 @@ const Header: FC<IHeaderProps> = ({ appItems, curApp, userProfile, onLogout, lan
             createText={t('common.menus.newApp')}
             onCreate={() => setShowNewAppDialog(true)}
           />
-          <Link href="/plugins-coming-soon" className={classNames(
+          {/* <Link href="/plugins-coming-soon" className={classNames(
             navClassName, 'group',
             isPluginsComingSoon && 'bg-white shadow-[0_2px_5px_-1px_rgba(0,0,0,0.05),0_2px_4px_-2px_rgba(0,0,0,0.05)]',
             isPluginsComingSoon ? 'text-primary-600' : 'text-gray-500 hover:bg-gray-200 hover:text-gray-700',
           )}>
             <PuzzlePieceIcon className='mr-1 w-[18px] h-[18px]' />
             {t('common.menus.plugins')}
-          </Link>
+          </Link> */}
           <Nav
             icon={<CircleStackIcon className='mr-1 w-[18px] h-[18px]' />}
             text={t('common.menus.datasets')}
