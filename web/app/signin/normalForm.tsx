@@ -158,7 +158,7 @@ const NormalForm = () => {
                   </Button>
                 </a>
               </div>
-              <div className='w-full'>
+              {/* <div className='w-full'>
                 <a href={`${apiPrefix}/oauth/login/google`}>
                   <Button
                     type='default'
@@ -176,7 +176,7 @@ const NormalForm = () => {
                     </>
                   </Button>
                 </a>
-              </div>
+              </div> */}
             </div>
           )}
 
