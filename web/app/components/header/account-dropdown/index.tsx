@@ -39,8 +39,8 @@ export default function AppSelector({ userProfile, onLogout, langeniusVersionInf
               text-gray-800 hover:bg-gray-200
             "
           >
-            <Avatar name={userProfile.name === 'Dify' ? userProfile.email : userProfile.name} className='mr-2' />
-            {userProfile.name === 'Dify' ? userProfile.email : userProfile.name}
+            <Avatar name={userProfile.name} className='mr-2' />
+            {userProfile.name}
             <ChevronDownIcon
               className="w-3 h-3 ml-1"
               aria-hidden="true"
@@ -65,9 +65,9 @@ export default function AppSelector({ userProfile, onLogout, langeniusVersionInf
           >
             <Menu.Item>
               <div className='flex flex-nowrap items-center px-4 py-[13px]'>
-                <Avatar name={userProfile.name === 'Dify' ? userProfile.email : userProfile.name} size={36} className='mr-3' />
+                <Avatar name={userProfile.name} size={36} className='mr-3' />
                 <div className='grow'>
-                  <div className='leading-5 font-normal text-[14px] text-gray-800 break-all'>{userProfile.name === 'Dify' ? userProfile.email : userProfile.name}</div>
+                  <div className='leading-5 font-normal text-[14px] text-gray-800 break-all'>{userProfile.name}</div>
                   <div className='leading-[18px] text-xs font-normal text-gray-500 break-all'>{userProfile.email}</div>
                 </div>
               </div>
