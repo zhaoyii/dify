@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import I18nServer from './components/i18n-server'
 import { getLocaleOnServer } from '@/i18n/server'
 
@@ -16,6 +17,19 @@ const LocaleLayout = ({
   const locale = getLocaleOnServer()
   return (
     <html lang={locale ?? 'en'} className="h-full">
+      <Helmet>
+        <script>
+          {`
+          var _hmt = _hmt || [];
+          (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?b6ffe2d32f5c54a948b38b040de50e6b";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+          })();
+        `}
+        </script>
+      </Helmet>
       <body
         className="h-full"
         data-api-prefix={process.env.NEXT_PUBLIC_API_PREFIX}
