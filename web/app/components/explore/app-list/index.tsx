@@ -10,7 +10,7 @@ import ExploreContext from '@/context/explore-context'
 import type { App } from '@/models/explore'
 import Category from '@/app/components/explore/category'
 import AppCard from '@/app/components/explore/app-card'
-import { fetchAppDetail, fetchAppList, installApp } from '@/service/explore'
+import { fetchAppDetail, fetchAppListStatic, installApp } from '@/service/explore'
 import { createApp } from '@/service/apps'
 import CreateAppModal from '@/app/components/explore/create-app-modal'
 import Loading from '@/app/components/base/loading'
@@ -32,7 +32,8 @@ const Apps: FC = () => {
   const [categories, setCategories] = React.useState([])
   useEffect(() => {
     (async () => {
-      const { categories, recommended_apps }: any = await fetchAppList()
+      // const { categories, recommended_apps }: any = await fetchAppList()
+      const { categories, recommended_apps }: any = await fetchAppListStatic()
       setCategories(categories)
       setAllList(recommended_apps)
       setIsLoaded(true)
