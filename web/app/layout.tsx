@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet'
 import I18nServer from './components/i18n-server'
 import { getLocaleOnServer } from '@/i18n/server'
 
@@ -17,18 +16,6 @@ const LocaleLayout = ({
   const locale = getLocaleOnServer()
   return (
     <html lang={locale ?? 'en'} className="h-full">
-      <Helmet>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WTD09KFGD" />
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-9WTD09KFGD');
-          `}
-        </script>
-      </Helmet>
       <body
         className="h-full"
         data-api-prefix={process.env.NEXT_PUBLIC_API_PREFIX}
