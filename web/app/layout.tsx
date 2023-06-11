@@ -18,16 +18,15 @@ const LocaleLayout = ({
   return (
     <html lang={locale ?? 'en'} className="h-full">
       <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WTD09KFGD" />
         <script>
           {`
-          var _hmt = _hmt || [];
-          (function() {
-              var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?b6ffe2d32f5c54a948b38b040de50e6b";
-              var s = document.getElementsByTagName("script")[0]; 
-              s.parentNode.insertBefore(hm, s);
-          })();
-        `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9WTD09KFGD');
+          `}
         </script>
       </Helmet>
       <body
