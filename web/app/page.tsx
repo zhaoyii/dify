@@ -1,8 +1,16 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import ReactGA from 'react-ga'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Loading from '@/app/components/base/loading'
+
+// 动态导入 react-ga，仅在客户端加载和运行
+const ReactGA = dynamic(
+  () => {
+    return import('react-ga')
+  },
+  { ssr: false }, // 这将禁用服务端渲染 (SSR)
+)
 
 const Home = () => {
   const router = useRouter()
