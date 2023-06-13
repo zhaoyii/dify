@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+import type { FC } from 'react'
+import React from 'react'
 import Script from 'next/script'
 
 export enum GaType {
@@ -7,17 +8,16 @@ export enum GaType {
 }
 
 const gaIdMaps = {
-  [GaType.admin]: 'G-DM9497FN4V',
-  [GaType.webapp]: 'G-2MFWXK7WYT',
+  [GaType.admin]: 'G-9WTD09KFGD',
+  [GaType.webapp]: 'G-9WTD09KFGD',
 }
 
-export interface IGAProps {
+export type IGAProps = {
   gaType: GaType
 }
 
-
 const GA: FC<IGAProps> = ({
-  gaType
+  gaType,
 }) => {
   return (
     <Script
